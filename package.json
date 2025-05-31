@@ -5,7 +5,6 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --watch src --exec node src/index.js"
   },
   "keywords": [],
@@ -14,5 +13,8 @@
   "devDependencies": {
     "nodemon": "^3.1.10",
     "prettier": "^3.5.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0"
   }
 }
