@@ -4,12 +4,22 @@
 
 import dotenv from "dotenv";
 import connectDB from "./db/index.js";
+import { app } from "./app.js";
+const port = process.env.PORT || 3000;
 
 dotenv.config({
   path: "./env",
 });
 
-connectDB();
+connectDB()
+  .then(() =>
+    app.listen(port, () => {
+      console.log("listening.. at port", port);
+    })
+  )
+  .catch((err) => {
+    console.log("db cvonnection failed", err);
+  });
 
 // const app = express();
 
